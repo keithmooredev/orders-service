@@ -33,12 +33,15 @@ class Order {
     const apples = this.getCount('Apple');
     const oranges = this.getCount('Orange');
 
+    // Apply special offer on apples: buy one get one free
     const appleDiscount = Math.round(apples / 2.0);
+    const appleCost = appleDiscount * appleUnitCost;
+
+    // Apply special offer on oranges: 3 for the price of two
     const orangeThrees = Math.trunc(oranges / 3.0);
     const orangeRemander = oranges % 3.0;
-
-    const appleCost = appleDiscount * appleUnitCost;
     const orangeCost = (orangeThrees * 2 * orangeUnitCost) + (orangeRemander * orangeUnitCost);
+
     return appleCost + orangeCost;
   }
 }
