@@ -14,10 +14,15 @@ program.version('0.1', '-v, --version')
 
 function help() {
   console.log('');
-  console.log('  Takes your order.');
+  console.log('  Welcome to the Orders Service. Please type your order as a list of comma separated values.');
+  console.log('');
+  console.log('  We currently offer the following items:');
+  console.log('   * Apple');
+  console.log('   * Orange');
+  console.log('');
   console.log('  Examples:');
   console.log('');
-  console.log(`    $ ./${progname} -o Apple, Orange, Apple`);
+  console.log(`    $ ./${progname} -o Apple, Apple, Orange, Apple`);
   console.log('');
 }
 
