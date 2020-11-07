@@ -1,3 +1,7 @@
+const priceBook = {
+  'Apple': 0.60,
+  'Orange': 0.25,
+};
 
 class Order {
   constructor(items) {
@@ -26,23 +30,18 @@ class Order {
 
     const appleUnitCost = this.getUnitCost('Apple');
     const orangeUnitCost = this.getUnitCost('Orange');
-    let apples = this.getCount('Apple');
-    let oranges = this.getCount('Orange');
+    const apples = this.getCount('Apple');
+    const oranges = this.getCount('Orange');
 
-    const appleDiscount = apples > 0 ? Math.round(apples / 2.0) : 0;
-    const orangeThrees = oranges > 0 ? Math.trunc(oranges / 3.0) : 0;
-    const orangeRemander = oranges > 0 ? oranges % 3.0 : 0;
+    const appleDiscount = Math.round(apples / 2.0);
+    const orangeThrees = Math.trunc(oranges / 3.0);
+    const orangeRemander = oranges % 3.0;
 
     const appleCost = appleDiscount * appleUnitCost;
     const orangeCost = (orangeThrees * 2 * orangeUnitCost) + (orangeRemander * orangeUnitCost);
     return appleCost + orangeCost;
   }
 }
-
-const priceBook = {
-  'Apple': 0.60,
-  'Orange': 0.25,
-};
 
 function parseItems(items) {
   return items.map((el) => el.replace(',', ''));
