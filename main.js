@@ -39,7 +39,7 @@ function main() {
   try {
     const items = args.order;
     const order = createOrder(items);
-    const cost = order.getCost();
+    const cost = order.getTotalCost();
     console.log('>>> Cost:', cost);
 
     console.log('Done.');
